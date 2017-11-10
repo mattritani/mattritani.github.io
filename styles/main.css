@@ -3,9 +3,7 @@ body {
 	font-family: Amiri ;
 }
 
-div {
-    width: 300px;
-    border: 25px solid green;
-    padding: 25px;
-    margin: 25px;
+p {
+    margin-left: 80px;
+    margin-top: 100px;
 }
