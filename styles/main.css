@@ -12,7 +12,7 @@ h1 {
 	font-family: Roboto ;
   font-size: 60px;
 }
-h3 {
+h2 {
 
 	font-family: Amiri ;
   font-weight: bold;
@@ -25,7 +25,9 @@ h3 {
 
 em {
     font-style: italic;
+    font-family: Amiri;
 }
+
 
 #grad {
   background: linear-gradient(to bottom right, #ffffe6, white); /* Standard syntax */
