@@ -17,3 +17,8 @@ h3 {
 	font-family: Amiri ;
   font-weight: bold;
 }
+
+.vertical-text {
+	transform: rotate(90deg);
+	transform-origin: left top 0;
+}
