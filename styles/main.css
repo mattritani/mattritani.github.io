@@ -18,9 +18,11 @@ hr {
 h1 {
   font-size: 5.5rem;
   font-family: Montserrat;
+  font-weight: bold;
 }
 h2 {
-  font-size: 7rem;
+  font-size: 4rem;
+  font-family: Montserrat;
 }
 h3 {
   font-size: 7rem;
