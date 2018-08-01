@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Matt Ritani</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Gentium+Book+Basic" rel="stylesheet">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link rel="stylesheet" type="text/css" href="styles/main.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+
+
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<!-- Row opens here -->
+<div class="container">
+
+  <div class="row">
+    <div class="eight columns offset-by-one">
+      <h1>Calculator</h1>
+  </div>
+</div>
+<!-- Row closes here -->
+
+<!-- Row opens here -->
+<div class="row">
+  <div class="eight columns offset-by-one">
+<div class="board" style="width:290px;">
+  <div>
+        <input name="text" id=ans>
+        <br>
+        <input type="buttonf" class="bigDigit" value="C"  onclick="clean()">
+        <input type="buttonf" class="digits" value="CE" onclick="back()">
+        <input type="buttonf" class="oper" value="/"  onclick="insert('/')">
+
+        <input type="buttonf" class="digits" value="1" onclick="insert(1)">
+
+        <input type="buttonf" class="digits" value="2" onclick="insert(2)">
+        <input type="buttonf" class="digits" value="3" onclick="insert(3)">
+        <input type="buttonf" class="oper"   value="+" onclick="insert('+')">
+        <br>
+        <input type="buttonf" class="digits" value="4" onclick="insert(4)">
+        <input type="buttonf" class="digits" value="5" onclick="insert(5)">
+        <input type="buttonf" class="digits" value="6" onclick="insert(6)">
+        <input type="buttonf" class="oper"   value="-" onclick="insert('-')">
+        <br>
+        <input type="buttonf" class="digits" value="7" onclick="insert(7)">
+        <input type="buttonf" class="digits" value="8" onclick="insert(8)">
+        <input type="buttonf" class="digits" value="9" onclick="insert(9)">
+        <input type="buttonf" class="oper"   value="x" onclick="insert('*')">
+        <br>
+        <input type="buttonf" class="bigDigit" value="0" onclick="insert(0)">
+        <input type="buttonf" class="digits"  value="."  onclick="insert('.')">
+        <input type="buttonf" class="oper"    value="=" onclick="equal()">
+
+        <br>
+
+      </div>
+
+
+
+
+  <br><br>
+      <h6>Try using this calculator</h6>
+  </div>
+  <div class="three columns">
+
+    <!-- JAVASCRIPT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <script src="PaintByNumbersBabe.js"></script>
+
+
+
+
+
+<!-- End Document
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
