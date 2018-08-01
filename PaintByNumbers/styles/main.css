@@ -14,14 +14,14 @@ body {
 }
 
 .pixelcontainer {
-  width: 700px;
-  height: 700px;
+  width: 630px;
+  height: 630px;
   background-image: url("http://www.marcobianchifotografo.it/wp-content/uploads/2017/05/CE17-5-Cervino-Testa-del-Leone-MarcoBianchi.jpg");
 }
 
 .cell {
-  width: 100px;
-    height: 100px;
+  width: 90px;
+    height: 90px;
     outline: 1px solid;
     outline-color: pink;
     float: left;
