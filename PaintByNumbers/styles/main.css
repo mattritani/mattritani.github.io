@@ -1,0 +1,65 @@
+body {
+  padding-top: 2rem;
+  font-family: Gentium Book Basic;
+}
+
+
+
+.highlight {
+  font-style: italic;
+  padding: 2rem;
+  background-color: #ccc;
+  border-radius: 0.5rem;
+  box-shadow: 0.5rem 0.5rem 0 0 #aaa;
+}
+
+.pixelcontainer {
+  width: 700px;
+  height: 700px;
+  background-image: url("http://www.marcobianchifotografo.it/wp-content/uploads/2017/05/CE17-5-Cervino-Testa-del-Leone-MarcoBianchi.jpg");
+}
+
+.cell {
+  width: 100px;
+    height: 100px;
+    outline: 1px solid;
+    outline-color: pink;
+    float: left;
+}
+
+hr {
+  border-top: 0;
+  margin-top: 7rem;
+}
+
+h1 {
+  font-size: 4.5rem;
+  font-family: Montserrat;
+  font-weight: bold;
+}
+h2 {
+  font-size: 2rem;
+  font-family: Montserrat;
+}
+h3 {
+  font-size: 7rem;
+}
+h4 {
+  font-size: 1.4rem;
+  font-family:Gentium Book Basic;
+}
+h5 {
+  font-size: 7rem;
+}
+h1 {
+  font-size: 7rem;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+background {
+  background-color: #f7efe3cc;
+}
