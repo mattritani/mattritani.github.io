@@ -114,26 +114,26 @@
 
 
       var geometry = new THREE.TorusGeometry( 14, 0.5, 50, 40);
-      var material = new THREE.MeshLambertMaterial({color: 0xf2b571, transparent: true, opacity: 0.8});
+      var material = new THREE.MeshLambertMaterial({color: 0xFFFFFF, transparent: true, opacity: 0.99});
       var torus = new THREE.Mesh( geometry, material );
 			scene.add( torus )
       torus.position.z = 10;
 
       var woggo = new THREE.DodecahedronGeometry( 7,0);
-      var material = new THREE.MeshLambertMaterial({color: 0x431e16, transparent: true, opacity: 0.7});
+      var material = new THREE.MeshLambertMaterial({color: 0xFFFFFF, transparent: true, opacity: 0.99});
       var ultra = new THREE.Mesh( woggo, material );
 			scene.add( ultra )
 			ultra.scale.y = 2.4;
     	ultra.position.y = 2.4;
 
       var geometry = new THREE.ConeGeometry( 6, 25, 32 );
-      var material = new THREE.MeshLambertMaterial({color: 0x9d4936, transparent: true, opacity: 0.3});
+      var material = new THREE.MeshLambertMaterial({color: 0xFFFFFF, transparent: true, opacity: 0.99});
       var cone = new THREE.Mesh( geometry, material );
 			scene.add( cone );
 			cone.position.x = -10;
 
       var swaggo= new THREE.TorusGeometry( 14, 0.5, 16, 100 );
-      var material = new THREE.MeshLambertMaterial({color: 0x9d4936, transparent: true, opacity: 0.9});
+      var material = new THREE.MeshLambertMaterial({color: 0xFFFFFF, transparent: true, opacity: 0.99});
       var goblin = new THREE.Mesh( swaggo, material );
 			scene.add( goblin );
 
