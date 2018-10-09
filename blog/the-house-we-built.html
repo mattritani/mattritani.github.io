@@ -80,6 +80,64 @@
         }
       )
 
+
+
+ loader.load(
+        'models/Desk-5.obj',
+        function(testObject) {
+					scene.add(testObject);
+
+          testObject.scale.x = 0.3;
+					testObject.scale.y = 0.5;
+					testObject.scale.z = 0.3;
+
+          testObject.position.x = -3;
+          testObject.position.y = -20;
+					testObject.position.z = -20;
+
+					testObject.rotation.x = -0.5;
+
+
+           var animate = function () {
+        requestAnimationFrame( animate );
+        testObject.rotation.x += 0.0002;
+        testObject.rotation.y += 0.0004;
+				testObject.rotation.z += 0.0004;
+
+      };
+      animate();
+
+        }
+      )
+
+      loader.load(
+        'models/Desk-6.obj',
+        function(testObject) {
+					scene.add(testObject);
+
+          testObject.scale.x = 0.3;
+					testObject.scale.y = 0.5;
+					testObject.scale.z = 0.3;
+
+          testObject.position.x = -3;
+          testObject.position.y = -20;
+					testObject.position.z = -20;
+
+					testObject.rotation.x = -0.5;
+
+
+           var animate = function () {
+        requestAnimationFrame( animate );
+        testObject.rotation.x += 0.0002;
+        testObject.rotation.y += 0.0004;
+				testObject.rotation.z += 0.0004;
+
+      };
+      animate();
+
+        }
+      )
+
    
 
 
