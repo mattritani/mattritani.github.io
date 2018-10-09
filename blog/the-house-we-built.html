@@ -1,0 +1,313 @@
+<html>
+  <head>
+    <title>My first three.js app
+    </title>
+    <style>
+      body {
+        margin: 0;
+      }
+      canvas {
+        width: 50%;
+        height: 50% }
+    </style>
+  </head>
+  <body>
+
+      <!-- <canvas id="myCanvas" width="578" height="70"></canvas> -->
+
+    <script src="js/three.js">
+    </script>
+    <script src="js/loaders/OBJLoader.js">
+    </script>
+    <script>
+			var scene = new THREE.Scene();
+      var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
+			camera.position.z = 30;
+      camera.position.y = -5;
+
+
+			scene.background = new THREE.Color( 0xf0301 );
+      var renderer = new THREE.WebGLRenderer();
+      renderer.setSize( window.innerWidth, window.innerHeight );
+			document.body.appendChild( renderer.domElement );
+
+      /* Mouse position*/
+
+      // function writeMessage(canvas, message) {
+      //       var context = canvas.getContext('2d');
+      //       context.clearRect(0, 0, canvas.width, canvas.height);
+      //       context.font = '18pt Calibri';
+      //       context.fillStyle = 'black';
+      //       context.fillText(message, 10, 25);
+      //     }
+      //     function getMousePos(canvas, evt) {
+      //       var rect = canvas.getBoundingClientRect();
+      //       return {
+      //         x: evt.clientX - rect.left,
+      //         y: evt.clientY - rect.top
+      //       };
+      //     }
+      //     var canvas = document.getElementById('myCanvas');
+      //     var context = canvas.getContext('2d');
+      //
+      //     canvas.addEventListener('mousemove', function(evt) {
+      //       var mousePos = getMousePos(canvas, evt);
+      //       var message = 'Mouse position: ' + mousePos.x + ',' + mousePos.y;
+      //       writeMessage(canvas, message);
+      //     }, false);
+
+    // logMouseMove();
+
+			/* Lights*/
+
+			var light = new THREE.PointLight( 0xeb5605, 1, 100 );
+			light.position.set( 50, 70, 80 );
+			scene.add( light );
+
+			var lumy = new THREE.PointLight( 0xff9797, 1, 100 );
+			light.position.set( 45, 0, 50 );
+			scene.add( lumy );
+
+			var ambient = new THREE.AmbientLight( 0xeb5605, 0.2 );
+			scene.add(ambient);
+
+
+
+      /* Geometry*/
+			var loader = new THREE.OBJLoader();
+
+		// let worty =	loader.parse('models/test-1.obj');
+
+
+
+      loader.load(
+        'models/test-1.obj',
+        function(testObject) {
+					scene.add(testObject);
+
+          testObject.scale.x = 0.3;
+					testObject.scale.y = 0.5;
+					testObject.scale.z = 0.3;
+
+          testObject.position.x = -3;
+          testObject.position.y = -20;
+					testObject.position.z = -20;
+
+					testObject.rotation.x = -0.5;
+
+
+           var animate = function () {
+        requestAnimationFrame( animate );
+        testObject.rotation.x += 0.0002;
+        testObject.rotation.y += 0.0004;
+				testObject.rotation.z += 0.0004;
+
+      };
+      animate();
+
+        }
+      )
+
+      var oppo = loader.load('models/nail.obj',
+                             function(nail) {
+				scene.add(nail);
+
+        nail.scale.x = 2;
+        nail.scale.y = 2;
+				nail.scale.z = 2;
+
+        nail.position.x = -10;
+        nail.position.y = 30;
+				nail.position.z = -20;
+
+        nail.rotation.x = 2.4;
+        nail.rotation.y = 0.5;
+        nail.rotation.z = 1.3;
+
+        var animate = function () {
+        requestAnimationFrame( animate );
+        nail.rotation.x += 0.0002;
+        nail.rotation.y += 0.0004;
+				nail.rotation.z += 0.0004;
+
+      };
+      animate();
+
+      }
+    )
+
+
+
+    var quince = loader.load('models/quince.obj',
+                           function(quince) {
+      scene.add(quince);
+      quince.scale.x = 4;
+      quince.scale.y = 4;
+      quince.scale.z = 4;
+      quince.position.x = -20;
+      quince.position.y = 40;
+      quince.position.z = -50;
+      quince.rotation.x = 2.4;
+      quince.rotation.y = 0.5;
+      quince.rotation.z = 1.3;
+      var animate = function () {
+      requestAnimationFrame( animate );
+      quince.rotation.x += 0.0002;
+      quince.rotation.y += 0.0004;
+      quince.rotation.z += 0.0004;
+    };
+    animate();
+    }
+    )
+
+
+
+    var razor = loader.load('models/razor.obj',
+                           function(razor) {
+      scene.add(razor);
+      razor.scale.x = 2.5;
+      razor.scale.y = 2.5;
+      razor.scale.z = 2.5;
+      razor.position.x = -20;
+      razor.position.y = 10;
+      razor.position.z = -50;
+      razor.rotation.x = 2.4;
+      razor.rotation.y = 0.5;
+      razor.rotation.z = 1.3;
+      var animate = function () {
+      requestAnimationFrame( animate );
+      razor.rotation.x += 0.0002;
+      razor.rotation.y += 0.0004;
+      razor.rotation.z += 0.0004;
+    };
+    animate();
+    }
+    )
+
+
+
+
+
+    var rollingpin = loader.load('models/rollingpin.obj',
+                           function(rollingpin) {
+      scene.add(rollingpin);
+      rollingpin.scale.x = 2.5;
+      rollingpin.scale.y = 2.5;
+      rollingpin.scale.z = 2.5;
+      rollingpin.position.x = -20;
+      rollingpin.position.y = 10;
+      rollingpin.position.z = -50;
+      rollingpin.rotation.x = 1;
+      rollingpin.rotation.y = 0.5;
+      rollingpin.rotation.z = 1.3;
+      var animate = function () {
+      requestAnimationFrame( animate );
+      rollingpin.rotation.x += 0.0002;
+      rollingpin.rotation.y += 0.0008;
+      rollingpin.rotation.z += 0.0004;
+    };
+    animate();
+    }
+    )
+
+    var bottle = loader.load('models/bottle.obj',
+                           function(bottle) {
+      scene.add(bottle);
+      bottle.scale.x = 1.5;
+      bottle.scale.y = 1.5;
+      bottle.scale.z = 1.5;
+      bottle.position.x = -20;
+      bottle.position.y = 10;
+      bottle.position.z = -50;
+      bottle.rotation.x = 1;
+      bottle.rotation.y = 1.2;
+      bottle.rotation.z = 2.4;
+      var animate = function () {
+      requestAnimationFrame( animate );
+      bottle.rotation.x += 0.0002;
+      bottle.rotation.y += 0.0008;
+      bottle.rotation.z += 0.0004;
+    };
+    animate();
+    }
+    )
+
+
+
+
+			var oppo = loader.load('models/Washingbrush.obj',
+                             function(golo) {
+				scene.add(golo);
+
+        golo.scale.x = 0.5;
+        golo.scale.y = 0.5;
+				golo.scale.z = 0.5;
+
+        golo.position.x = -20;
+        golo.position.y = 0;
+				golo.position.z = -10;
+
+        golo.rotation.x = 1;
+        golo.rotation.y = 1.2;
+        golo.rotation.z = 2.3;
+
+        var animate = function () {
+        requestAnimationFrame( animate );
+        golo.rotation.x += 0.0002;
+        golo.rotation.y += 0.004;
+				golo.rotation.z += 0.0004;
+
+      };
+      animate();
+
+      }
+    )
+
+
+
+      var geometry = new THREE.TorusGeometry( 14, 0.5, 50, 40);
+      var material = new THREE.MeshLambertMaterial({color: 0xf2b571, transparent: true, opacity: 0.8});
+      var torus = new THREE.Mesh( geometry, material );
+			scene.add( torus )
+      torus.position.z = 10;
+
+      var woggo = new THREE.DodecahedronGeometry( 7,0);
+      var material = new THREE.MeshLambertMaterial({color: 0x431e16, transparent: true, opacity: 0.7});
+      var ultra = new THREE.Mesh( woggo, material );
+			scene.add( ultra )
+			ultra.scale.y = 2.4;
+    	ultra.position.y = 2.4;
+
+      var geometry = new THREE.ConeGeometry( 6, 25, 32 );
+      var material = new THREE.MeshLambertMaterial({color: 0x9d4936, transparent: true, opacity: 0.3});
+      var cone = new THREE.Mesh( geometry, material );
+			scene.add( cone );
+			cone.position.x = -10;
+
+      var swaggo= new THREE.TorusGeometry( 14, 0.5, 16, 100 );
+      var material = new THREE.MeshLambertMaterial({color: 0x9d4936, transparent: true, opacity: 0.9});
+      var goblin = new THREE.Mesh( swaggo, material );
+			scene.add( goblin );
+
+       /* Animation*/
+      var animate = function () {
+        requestAnimationFrame( animate );
+        torus.rotation.x += 0.0003;
+        torus.rotation.y += 0.0002;
+				torus.rotation.z += 0.0004;
+
+        ultra.rotation.x += 0.02;
+        ultra.rotation.y += 0.0002;
+				ultra.rotation.z += 0.0004;
+
+        goblin.rotation.x += -0.005;
+        goblin.rotation.y += -0.004;
+				goblin.rotation.z += -0.008;
+
+				cone.rotation.z += 0.005;
+
+        renderer.render( scene, camera );
+      };
+      animate();
+    </script>
+  </body>
