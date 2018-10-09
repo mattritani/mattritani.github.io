@@ -80,6 +80,7 @@
         }
       )
 
+   
 
 
 			var oppo = loader.load('models/Washingbrush.obj',
@@ -112,12 +113,46 @@
 
 
 
-    
+      var geometry = new THREE.TorusGeometry( 14, 0.5, 50, 40);
+      var material = new THREE.MeshLambertMaterial({color: 0xf2b571, transparent: true, opacity: 0.8});
+      var torus = new THREE.Mesh( geometry, material );
+			scene.add( torus )
+      torus.position.z = 10;
+
+      var woggo = new THREE.DodecahedronGeometry( 7,0);
+      var material = new THREE.MeshLambertMaterial({color: 0x431e16, transparent: true, opacity: 0.7});
+      var ultra = new THREE.Mesh( woggo, material );
+			scene.add( ultra )
+			ultra.scale.y = 2.4;
+    	ultra.position.y = 2.4;
+
+      var geometry = new THREE.ConeGeometry( 6, 25, 32 );
+      var material = new THREE.MeshLambertMaterial({color: 0x9d4936, transparent: true, opacity: 0.3});
+      var cone = new THREE.Mesh( geometry, material );
+			scene.add( cone );
+			cone.position.x = -10;
+
+      var swaggo= new THREE.TorusGeometry( 14, 0.5, 16, 100 );
+      var material = new THREE.MeshLambertMaterial({color: 0x9d4936, transparent: true, opacity: 0.9});
+      var goblin = new THREE.Mesh( swaggo, material );
+			scene.add( goblin );
 
        /* Animation*/
       var animate = function () {
         requestAnimationFrame( animate );
-        
+        torus.rotation.x += 0.0003;
+        torus.rotation.y += 0.0002;
+				torus.rotation.z += 0.0004;
+
+        ultra.rotation.x += 0.02;
+        ultra.rotation.y += 0.0002;
+				ultra.rotation.z += 0.0004;
+
+        goblin.rotation.x += -0.005;
+        goblin.rotation.y += -0.004;
+				goblin.rotation.z += -0.008;
+
+				cone.rotation.z += 0.005;
 
         renderer.render( scene, camera );
       };
