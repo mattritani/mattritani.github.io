@@ -119,18 +119,9 @@
 
 
 
-      var geometry = new THREE.TorusGeometry( 0.1, 0.1, 0.1, 0.1);
-      var material = new THREE.MeshLambertMaterial({color: 0xFFFFFF, transparent: true, opacity: 0.99});
-      var torus = new THREE.Mesh( geometry, material );
-			scene.add( torus )
-      torus.position.z = 10;
+    
 
-      var woggo = new THREE.DodecahedronGeometry( 7,0);
-      var material = new THREE.MeshLambertMaterial({color: 0xFFFFFF, transparent: true, opacity: 0.99});
-      var ultra = new THREE.Mesh( woggo, material );
-			scene.add( ultra )
-			ultra.scale.y = 0.1;
-    	ultra.position.y = 0.1;
+      
 
       var geometry = new THREE.ConeGeometry( 0.1, 0.1, 0.1 );
       var material = new THREE.MeshLambertMaterial({color: 0xFFFFFF, transparent: true, opacity: 0.99});
@@ -146,13 +137,7 @@
        /* Animation*/
       var animate = function () {
         requestAnimationFrame( animate );
-        torus.rotation.x += 0.0003;
-        torus.rotation.y += 0.0002;
-				torus.rotation.z += 0.0004;
-
-        ultra.rotation.x += 0.02;
-        ultra.rotation.y += 0.0002;
-				ultra.rotation.z += 0.0004;
+       
 
         goblin.rotation.x += -0.005;
         goblin.rotation.y += -0.004;
