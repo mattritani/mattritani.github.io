@@ -74,9 +74,9 @@
 
            var animate = function () {
         requestAnimationFrame( animate );
-        testObject.rotation.x += 0.0002;
-        testObject.rotation.y += 0.0004;
-				testObject.rotation.z += 0.0004;
+        testObject.rotation.x += 0.2;
+        testObject.rotation.y += 0.2;
+				testObject.rotation.z += 0.2;
 
       };
       animate();
@@ -102,9 +102,9 @@
 
            var animate = function () {
         requestAnimationFrame( animate );
-        testObject.rotation.x += 0.0002;
-        testObject.rotation.y += 0.0004;
-				testObject.rotation.z += 0.0004;
+        testObject.rotation.x += 0.4;
+        testObject.rotation.y += 0.4;
+				testObject.rotation.z += 0.4;
 
       };
       animate();
@@ -112,16 +112,6 @@
         }
       )
 
-   
-
-
-	
-
-
-
-    
-
-      
 
       var geometry = new THREE.ConeGeometry( 0.1, 0.1, 0.1 );
       var material = new THREE.MeshLambertMaterial({color: 0xFFFFFF, transparent: true, opacity: 0.99});
