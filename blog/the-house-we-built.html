@@ -58,9 +58,18 @@
 
 			/* Speeds */
 
-            let baseSpeed = 0.0003; 
+            let baseSpeed = 0.002; 
+
+            let baseSpeed1 = baseSpeed;
             let baseSpeed2 = baseSpeed/2; 
             let baseSpeed3 = baseSpeed/3; 
+            let baseSpeed4 = baseSpeed/5; 
+            let baseSpeed5 = baseSpeed/9;
+            let baseSpeed6 = baseSpeed/11;
+            let baseSpeed7 = baseSpeed/4; 
+            let baseSpeed8 = baseSpeed/7; 
+            let baseSpeed9 = baseSpeed/15; 
+            let baseSpeed10 = baseSpeed/6;
             
 
 
@@ -83,9 +92,9 @@ loader.load(
 
            var animate = function () {
         requestAnimationFrame( animate );
-        testObject.rotation.x += baseSpeed;
-        testObject.rotation.y += baseSpeed;
-				testObject.rotation.z += baseSpeed;
+        testObject.rotation.x += -baseSpeed1;
+        testObject.rotation.y += -baseSpeed1;
+				testObject.rotation.z += -baseSpeed1;
 
       };
       animate();
@@ -143,9 +152,9 @@ loader.load(
 
            var animate = function () {
         requestAnimationFrame( animate );
-        testObject.rotation.x += baseSpeed3;
-        testObject.rotation.y += baseSpeed3;
-		testObject.rotation.z += baseSpeed3;
+        testObject.rotation.x += -baseSpeed3;
+        testObject.rotation.y += -baseSpeed3;
+		testObject.rotation.z += -baseSpeed3;
 
       };
       animate();
@@ -174,9 +183,9 @@ loader.load(
 
            var animate = function () {
         requestAnimationFrame( animate );
-        testObject.rotation.x += baseSpeed;
-        testObject.rotation.y += baseSpeed;
-				testObject.rotation.z += baseSpeed;
+        testObject.rotation.x += baseSpeed4;
+        testObject.rotation.y += baseSpeed4;
+				testObject.rotation.z += baseSpeed4;
 
       };
       animate();
@@ -203,9 +212,9 @@ loader.load(
 
            var animate = function () {
         requestAnimationFrame( animate );
-        testObject.rotation.x += baseSpeed2;
-        testObject.rotation.y += baseSpeed2;
-				testObject.rotation.z += baseSpeed2;
+        testObject.rotation.x += -baseSpeed5;
+        testObject.rotation.y += -baseSpeed5;
+				testObject.rotation.z += -baseSpeed5;
 
       };
       animate();
@@ -232,9 +241,9 @@ loader.load(
 
            var animate = function () {
         requestAnimationFrame( animate );
-        testObject.rotation.x += baseSpeed3;
-        testObject.rotation.y += baseSpeed3;
-				testObject.rotation.z += baseSpeed3;
+        testObject.rotation.x += -baseSpeed6;
+        testObject.rotation.y += -baseSpeed6;
+				testObject.rotation.z += -baseSpeed6;
 
       };
       animate();
