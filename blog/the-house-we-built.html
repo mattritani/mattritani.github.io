@@ -58,7 +58,7 @@
 
 			/* Speeds */
 
-            let baseSpeed = 0.00004; 
+            let baseSpeed = 0.1; 
 
             let baseSpeed1 = baseSpeed;
             let baseSpeed2 = baseSpeed/2; 
@@ -330,9 +330,9 @@ loader.load(
 
            var animate = function () {
         requestAnimationFrame( animate );
-        testObject.rotation.x += 0.008;
-        testObject.rotation.y += 0.008;
-				testObject.rotation.z += 0.008;
+        testObject.rotation.x += baseSpeed1;
+        testObject.rotation.y += baseSpeed1;
+				testObject.rotation.z += baseSpeed1;
 
       };
       animate();
@@ -360,9 +360,9 @@ loader.load(
 
            var animate = function () {
         requestAnimationFrame( animate );
-        testObject.rotation.x += 0.004;
-        testObject.rotation.y += 0.004;
-				testObject.rotation.z += 0.004;
+        testObject.rotation.x += baseSpeed5;
+        testObject.rotation.y += baseSpeed5;
+				testObject.rotation.z += baseSpeed5;
 
       };
       animate();
@@ -390,9 +390,9 @@ loader.load(
 
            var animate = function () {
         requestAnimationFrame( animate );
-        testObject.rotation.x += 0.002;
-        testObject.rotation.y += 0.002;
-				testObject.rotation.z += 0.002;
+        testObject.rotation.x += baseSpeed;
+        testObject.rotation.y += baseSpeed;
+				testObject.rotation.z += baseSpeed;
 
       };
       animate();
