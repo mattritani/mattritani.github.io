@@ -114,6 +114,13 @@
 
     
 
-   
+       /* Animation*/
+      var animate = function () {
+        requestAnimationFrame( animate );
+        
+
+        renderer.render( scene, camera );
+      };
+      animate();
     </script>
   </body>
