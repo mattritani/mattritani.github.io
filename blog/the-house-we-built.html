@@ -31,6 +31,9 @@
       renderer.setSize( window.innerWidth, window.innerHeight );
 			document.body.appendChild( renderer.domElement );
 
+
+
+
      
 
 			/* Lights*/
@@ -52,6 +55,15 @@
 			var loader = new THREE.OBJLoader();
 
 
+
+			/* Speeds */
+
+            let baseSpeed = 0.0003; 
+            let baseSpeed2 = baseSpeed/2; 
+            let baseSpeed3 = baseSpeed/3; 
+            
+
+
 /* Geometry-----------------------*/
 loader.load(
         'models/Desk-4.obj',
@@ -71,9 +83,9 @@ loader.load(
 
            var animate = function () {
         requestAnimationFrame( animate );
-        testObject.rotation.x += 0.002;
-        testObject.rotation.y += 0.002;
-				testObject.rotation.z += 0.002;
+        testObject.rotation.x += baseSpeed;
+        testObject.rotation.y += baseSpeed;
+				testObject.rotation.z += baseSpeed;
 
       };
       animate();
@@ -101,9 +113,9 @@ loader.load(
 
            var animate = function () {
         requestAnimationFrame( animate );
-        testObject.rotation.x += 0.004;
-        testObject.rotation.y += 0.004;
-				testObject.rotation.z += 0.004;
+        testObject.rotation.x += baseSpeed2;
+        testObject.rotation.y += baseSpeed2;
+				testObject.rotation.z += baseSpeed2;
 
       };
       animate();
@@ -131,9 +143,9 @@ loader.load(
 
            var animate = function () {
         requestAnimationFrame( animate );
-        testObject.rotation.x += 0.002;
-        testObject.rotation.y += 0.002;
-				testObject.rotation.z += 0.002;
+        testObject.rotation.x += baseSpeed3;
+        testObject.rotation.y += baseSpeed3;
+		testObject.rotation.z += baseSpeed3;
 
       };
       animate();
@@ -162,9 +174,9 @@ loader.load(
 
            var animate = function () {
         requestAnimationFrame( animate );
-        testObject.rotation.x += 0.004;
-        testObject.rotation.y += 0.004;
-				testObject.rotation.z += 0.004;
+        testObject.rotation.x += baseSpeed;
+        testObject.rotation.y += baseSpeed;
+				testObject.rotation.z += baseSpeed;
 
       };
       animate();
@@ -191,9 +203,9 @@ loader.load(
 
            var animate = function () {
         requestAnimationFrame( animate );
-        testObject.rotation.x += 0.002;
-        testObject.rotation.y += 0.002;
-				testObject.rotation.z += 0.002;
+        testObject.rotation.x += baseSpeed2;
+        testObject.rotation.y += baseSpeed2;
+				testObject.rotation.z += baseSpeed2;
 
       };
       animate();
@@ -220,9 +232,9 @@ loader.load(
 
            var animate = function () {
         requestAnimationFrame( animate );
-        testObject.rotation.x += 0.008;
-        testObject.rotation.y += 0.008;
-				testObject.rotation.z += 0.008;
+        testObject.rotation.x += baseSpeed3;
+        testObject.rotation.y += baseSpeed3;
+				testObject.rotation.z += baseSpeed3;
 
       };
       animate();
@@ -251,9 +263,9 @@ loader.load(
 
            var animate = function () {
         requestAnimationFrame( animate );
-        testObject.rotation.x += 0.004;
-        testObject.rotation.y += 0.004;
-				testObject.rotation.z += 0.004;
+        testObject.rotation.x += baseSpeed2;
+        testObject.rotation.y += baseSpeed2;
+				testObject.rotation.z += baseSpeed2;
 
       };
       animate();
@@ -280,9 +292,9 @@ loader.load(
 
            var animate = function () {
         requestAnimationFrame( animate );
-        testObject.rotation.x += 0.004;
-        testObject.rotation.y += 0.004;
-				testObject.rotation.z += 0.004;
+        testObject.rotation.x += baseSpeed;
+        testObject.rotation.y += baseSpeed;
+				testObject.rotation.z += baseSpeed;
 
       };
       animate();
