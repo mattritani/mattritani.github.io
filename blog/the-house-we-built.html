@@ -114,25 +114,6 @@
 
     
 
-       /* Animation*/
-      var animate = function () {
-        requestAnimationFrame( animate );
-        torus.rotation.x += 0.0003;
-        torus.rotation.y += 0.0002;
-				torus.rotation.z += 0.0004;
-
-        ultra.rotation.x += 0.02;
-        ultra.rotation.y += 0.0002;
-				ultra.rotation.z += 0.0004;
-
-        goblin.rotation.x += -0.005;
-        goblin.rotation.y += -0.004;
-				goblin.rotation.z += -0.008;
-
-				cone.rotation.z += 0.005;
-
-        renderer.render( scene, camera );
-      };
-      animate();
+   
     </script>
   </body>
