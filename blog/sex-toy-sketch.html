@@ -8,7 +8,7 @@
       }
       canvas {
         width: 50%;
-        height: 50% } 
+        height: 50% }
     </style>
   </head>
   <body>
@@ -25,17 +25,18 @@
 			camera.position.z = 30;
       camera.position.y = -5;
 
-
+      var axesHelper = new THREE.AxesHelper( 5 );
+      scene.add( axesHelper );
 
 
 			scene.background = new THREE.Color( 0xefe6bf );
       var renderer = new THREE.WebGLRenderer();
 
-      
+
       renderer.setSize( window.innerWidth, window.innerHeight );
 			document.body.appendChild( renderer.domElement );
 
-     
+
 
 			/* Lights*/
 
@@ -55,7 +56,7 @@
       /* Geometry*/
 			var loader = new THREE.OBJLoader();
 
-		
+
 
 
 
@@ -87,27 +88,43 @@
         }
       )
 
+
+    var points = [];
+    for ( var i = 0; i < 15; i ++ ) {
+    points.push( new THREE.Vector2( Math.sin( i * 0.2 ) * 30 + 23, ( i - 5 ) * 2 ) );
+    }
+    var geometry = new THREE.LatheGeometry( points );
+    var material = new THREE.MeshLambertMaterial({color: 0x9d4936, transparent: true, opacity: 0.9});
+    var lathe = new THREE.Mesh( geometry, material );
+    scene.add( lathe );
+
+
+
+    lathe.scale.x = 0.3;
+    lathe.scale.y = 3;
+    lathe.scale.z = 0.3;
+
       var oppo = loader.load('models/hamhigher.obj',
-                             function(nail) {
-				scene.add(nail);
+                             function(hamhigher) {
+				scene.add(hamhigher);
 
-        nail.scale.x = 0.7;
-        nail.scale.y = 0.7;
-				nail.scale.z = 0.7;
+        hamhigher.scale.x = 0.7;
+        hamhigher.scale.y = 0.7;
+				hamhigher.scale.z = 0.7;
 
-        nail.position.x = -10;
-        nail.position.y = 30;
-				nail.position.z = -20;
+        hamhigher.position.x = -10;
+        hamhigher.position.y = 30;
+				hamhigher.position.z = -20;
 
-        nail.rotation.x = 2.4;
-        nail.rotation.y = 0.5;
-        nail.rotation.z = 1.3;
+        hamhigher.rotation.x = 2.4;
+        hamhigher.rotation.y = 0.5;
+        hamhigher.rotation.z = 1.3;
 
         var animate = function () {
         requestAnimationFrame( animate );
-        nail.rotation.x += 0.0002;
-        nail.rotation.y += 0.0004;
-				nail.rotation.z += 0.0004;
+        hamhigher.rotation.x += 0.0002;
+        hamhigher.rotation.y += 0.0004;
+				hamhigher.rotation.z += 0.0004;
 
       };
       animate();
@@ -120,13 +137,6 @@
 
 
 
-  
-
-
-
-
-
-  
 
 
 
@@ -135,9 +145,16 @@
 
 
 
-     
 
-    
+
+
+
+
+
+
+
+
+
 
       var swaggo= new THREE.TorusGeometry( 14, 0.02, 16, 100 );
       var material = new THREE.MeshLambertMaterial({color: 0x9d4936, transparent: true, opacity: 0.9});
@@ -147,9 +164,9 @@
        /* Animation*/
       var animate = function () {
         requestAnimationFrame( animate );
-        
 
-       
+
+
 
         goblin.rotation.x += -0.005;
         goblin.rotation.y += -0.004;

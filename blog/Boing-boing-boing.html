@@ -1,0 +1,131 @@
+<html>
+  <head>
+    <title>My first three.js app
+    </title>
+    <style>
+      body {
+        margin: 0;
+      }
+      canvas {
+        width: 50%;
+        height: 50% }
+    </style>
+  </head>
+  <body>
+
+      <!-- <canvas id="myCanvas" width="578" height="70"></canvas> -->
+
+    <script src="js/three.js">
+    </script>
+    <script src="js/loaders/OBJLoader.js">
+    </script>
+    <script>
+			var scene = new THREE.Scene();
+      var camera = new THREE.PerspectiveCamera( 85, window.innerWidth/window.innerHeight, 0.1, 1000 );
+            camera.position.z = 19 ;
+            camera.position.y = 0;
+            camera.position.x = 5;
+      
+
+      var axesHelper = new THREE.AxesHelper( 5 );
+      scene.add( axesHelper );
+
+
+			scene.background = new THREE.Color( 0xccd8e5);
+      var renderer = new THREE.WebGLRenderer();
+
+
+      renderer.setSize( window.innerWidth, window.innerHeight );
+			document.body.appendChild( renderer.domElement );
+
+
+
+			/* Lights*/
+
+			var light = new THREE.PointLight( 0xf0caf9, 1, 100 );
+			light.position.set( 50, 70, 80 );
+			scene.add( light );
+
+			var lumy = new THREE.PointLight( 0x46e1fc, 1, 100 );
+			light.position.set( 45, 0, 50 );
+			scene.add( lumy );
+
+			var ambient = new THREE.AmbientLight( 0xf0caf9, 0.2 );
+			scene.add(ambient);
+
+
+
+      /* Geometry*/
+			var loader = new THREE.OBJLoader();
+
+
+            var swaggo= new THREE.TorusGeometry( 14, 0.02, 16, 100 );
+            var material = new THREE.MeshLambertMaterial({color: 0x9d4936, transparent: true, opacity: 0.9});
+            var goblin = new THREE.Mesh( swaggo, material );
+            scene.add( goblin );
+
+
+            var mog= new THREE.TorusGeometry( 14, 0.02, 16, 100 );
+            var material = new THREE.MeshLambertMaterial({color: 0x9d4936, transparent: true, opacity: 0.9});
+            var twog= new THREE.Mesh( mog, material );
+            scene.add( twog );
+
+
+
+            var shog= new THREE.TorusGeometry( 14, 0.02, 16, 100 );
+            var material = new THREE.MeshLambertMaterial({color: 0x9d4936, transparent: true, opacity: 0.9});
+            var tello= new THREE.Mesh( shog, material );
+            scene.add( tello );
+
+
+            var offa= new THREE.TorusGeometry( 14, 0.02, 16, 100 );
+            var material = new THREE.MeshLambertMaterial({color: 0x9d4936, transparent: true, opacity: 0.9});
+            var pofff= new THREE.Mesh( offa, material );
+            scene.add( pofff );
+            
+
+            var poppy= new THREE.TorusGeometry( 14, 0.02, 16, 100 );
+            var material = new THREE.MeshLambertMaterial({color: 0x9d4936, transparent: true, opacity: 0.9});
+            var owowo= new THREE.Mesh( poppy, material );
+            scene.add( owowo );
+
+            var osso= new THREE.TorusGeometry( 14, 0.02, 16, 100 );
+            var material = new THREE.MeshLambertMaterial({color: 0x9d4936, transparent: true, opacity: 0.9});
+            var gamma= new THREE.Mesh( osso, material );
+            scene.add( gamma );
+            
+       /* Animation*/
+      var animate = function () {
+        requestAnimationFrame( animate );
+
+            goblin.rotation.x += -0.005;
+            goblin.rotation.y += -0.004;
+            goblin.rotation.z += -0.008;
+
+            twog.rotation.x += -0.002;
+            twog.rotation.y += -0.001;
+            twog.rotation.z += -0.01;
+
+            tello.rotation.x += 0.003;
+            tello.rotation.y += 0.008;
+            tello.rotation.z += 0.008;
+
+            pofff.rotation.x += 0.0003;
+            pofff.rotation.y += 0.0008;
+            pofff.rotation.z += -0.0008;
+
+            owowo.rotation.x += -0.002;
+            owowo.rotation.y += 0.001;
+            owowo.rotation.z += -0.00002;
+
+            gamma.rotation.x += 0.0003;
+            gamma.rotation.y += -0.00022;
+            gamma.rotation.z += 0.006;
+
+
+
+        renderer.render( scene, camera );
+      };
+      animate();
+    </script>
+  </body>
