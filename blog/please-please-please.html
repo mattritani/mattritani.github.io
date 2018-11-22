@@ -1,0 +1,168 @@
+<html>
+  <head>
+    <title>My first three.js app
+    </title>
+    <style>
+      body {
+        margin: 0;
+      }
+      canvas {
+        width: 50%;
+        height: 50% }
+    </style>
+  </head>
+  <body>
+
+      <!-- <canvas id="myCanvas" width="578" height="70"></canvas> -->
+
+    <script src="js/three.js">
+    </script>
+    <script src="js/loaders/OBJLoader.js">
+    </script>
+    <script>
+			var scene = new THREE.Scene();
+      var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 5000 );
+            camera.position.z = 19 ;
+            camera.position.y = 30;
+            camera.position.x = 30;
+
+
+            var point = new THREE.Vector3( 0, 0, 0 );
+
+camera.lookAt( point )
+
+      var axesHelper = new THREE.AxesHelper( 5 );
+      scene.add( axesHelper );
+
+
+			scene.background = new THREE.Color( 0xefe6bf );
+      var renderer = new THREE.WebGLRenderer();
+
+
+      renderer.setSize( window.innerWidth, window.innerHeight );
+			document.body.appendChild( renderer.domElement );
+
+
+
+			/* Lights*/
+
+			var light = new THREE.PointLight( 0xf0caf9, 1, 100 );
+			light.position.set( 50, 70, 80 );
+			scene.add( light );
+
+			var lumy = new THREE.PointLight( 0x46e1fc, 1, 100 );
+			light.position.set( 45, 0, 50 );
+			scene.add( lumy );
+
+			var ambient = new THREE.AmbientLight( 0xf0caf9, 0.2 );
+			scene.add(ambient);
+
+
+
+      /* Geometry*/
+			var loader = new THREE.OBJLoader();
+
+
+
+        let overallsize = 1; 
+        let rotx = 0.2;
+        let roty = 0.3;
+        let rotz = 0; 
+        let possiex = 40;
+        let possiey = -20;
+        let possiez = -60;
+
+
+      var oppo = loader.load('models/tissue.obj',
+                             function(hamhigher) {
+				scene.add(hamhigher);
+
+        hamhigher.scale.x = overallsize;
+        hamhigher.scale.y = overallsize;
+        hamhigher.scale.z = overallsize;
+
+        hamhigher.position.x = possiex;
+        hamhigher.position.y = possiey;
+        hamhigher.position.z = possiez;
+       
+        hamhigher.rotation.x = -rotx;
+        hamhigher.rotation.y = -roty;
+        hamhigher.rotation.z = -rotz;
+
+        var animate = function () {
+        requestAnimationFrame( animate );
+        hamhigher.rotation.x += 0.0002;
+        hamhigher.rotation.y += 0.0004;
+		hamhigher.rotation.z += 0.0004;
+
+      };
+      animate();
+
+      }
+    )
+
+      var oppo = loader.load('models/tissue.obj',
+                             function(gothmom) {
+				scene.add(gothmom);
+
+        gothmom.scale.x = overallsize;
+        gothmom.scale.y = overallsize;
+		gothmom.scale.z = overallsize;
+
+        gothmom.position.x = possiex;
+        gothmom.position.y = possiey;
+        gothmom.position.z = possiez;
+    
+        gothmom.rotation.x = rotx;
+        gothmom.rotation.y = roty;
+        gothmom.rotation.z = rotz;
+
+        var animate = function () {
+        requestAnimationFrame( animate );
+        gothmom.rotation.x += -0.0002;
+        gothmom.rotation.y += -0.0004;
+		gothmom.rotation.z += -0.0004;
+
+      };
+      animate();
+
+      }
+    )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       /* Animation*/
+      var animate = function () {
+        requestAnimationFrame( animate );
+
+
+
+
+
+
+        renderer.render( scene, camera );
+      };
+      animate();
+    </script>
+  </body>
