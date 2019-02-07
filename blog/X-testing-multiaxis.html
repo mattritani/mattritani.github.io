@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <title>My first three.js app
+    </title>
+    <style>
+      body {
+        margin: 0;
+      }
+      canvas {
+        width: 50%;
+        height: 50% }
+    </style>
+  </head>
+  <body>
+
+      <!-- <canvas id="myCanvas" width="578" height="70"></canvas> -->
+
+    <script src="js/three.js">
+    </script>
+    <script src="js/loaders/OBJLoader.js">
+    </script>
+    <script>
+			var scene = new THREE.Scene();
+      var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 5000 );
+            camera.position.z = 19 ;
+            camera.position.y = 30;
+            camera.position.x = 30;
+
+
+            var point = new THREE.Vector3( 0, 0, 0 );
+
+camera.lookAt( point )
+
+      var axesHelper = new THREE.AxesHelper( 5 );
+      scene.add( axesHelper );
+
+			scene.background = new THREE.Color( 0xefe6bf );
+      var renderer = new THREE.WebGLRenderer();
+
+      renderer.setSize( window.innerWidth, window.innerHeight );
+			document.body.appendChild( renderer.domElement );
+
+			/* Lights*/
+
+			var light = new THREE.PointLight( 0xf0caf9, 1, 100 );
+			light.position.set( 50, 70, 80 );
+			scene.add( light );
+
+			var lumy = new THREE.PointLight( 0x46e1fc, 1, 100 );
+			light.position.set( 45, 0, 50 );
+			scene.add( lumy );
+
+			var ambient = new THREE.AmbientLight( 0xf0caf9, 0.2 );
+			scene.add(ambient);
+
+      /* Geometry*/
+			
+
+    var geometry = new THREE.PlaneBufferGeometry( 5, 20, 90 );
+    var material = new THREE.MeshBasicMaterial( {color: 0xffff00, side: THREE.DoubleSide} );
+    var plane = new THREE.Mesh( geometry, material );
+    scene.add( plane );
+
+
+// queen is a mesh
+var newQueen = plane.clone();
+
+// make sure to re position to be able to see the new queen!
+newQueen.position.set(4,4,4); // or any other coordinates
+
+
+       /* Animation*/
+      var animate = function () {
+        requestAnimationFrame( animate );
+
+plane.rotation.x += 0.01;
+plane.rotation.y += 0.01;
+plane.rotation.z += 0.01;
+
+newQueen.rotation.x += 0.9;
+
+        renderer.render( scene, camera );
+      };
+      animate();
+    </script>
+  </body>
