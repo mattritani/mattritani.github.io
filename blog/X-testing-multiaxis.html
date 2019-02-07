@@ -60,14 +60,14 @@ camera.lookAt( point )
     var material = new THREE.MeshBasicMaterial( {color: 0xffff00, side: THREE.DoubleSide} );
     var plane = new THREE.Mesh( geometry, material );
     scene.add( plane );
+   
+   var plane1 = plane.clone();
 
 
-// queen is a mesh
-var newQueen = plane.clone();
 
-// make sure to re position to be able to see the new queen!
-newQueen.position.set(4,4,4); // or any other coordinates
 
+plane1.position.set( -10, 0, 0 );
+plane.position.set( 10, 0, 0 );
 
        /* Animation*/
       var animate = function () {
@@ -77,7 +77,7 @@ plane.rotation.x += 0.01;
 plane.rotation.y += 0.01;
 plane.rotation.z += 0.01;
 
-newQueen.rotation.x += 0.9;
+
 
         renderer.render( scene, camera );
       };
